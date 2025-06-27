@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Form</title>
-    <script type="text/javascript" src="loadloc.js" defer></script>
+    <title>Form - Part 1</title>
+    <script src="loadloc.js" defer></script>
 </head>
 <body>
 
@@ -12,11 +12,94 @@
 <article>
 <div>
   <form id="myform" action="">
-    <!-- TODO TODO TODO -->
 
-    <!-- List of Countries -->
-    <select id="loc" name="country1">
-    </select>
+    <!-- Personal Information -->
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label>Title
+        <select name="title">
+          <option>Mr.</option>
+          <option>Mrs.</option>
+          <option>Ms.</option>
+          <option>Dr.</option>
+        </select>
+      </label>
+
+      <label>First name
+        <input type="text" name="firstname" placeholder="Your first name here" required>
+      </label>
+
+      <label>Last name
+        <input type="text" name="lastname" placeholder="Your last name here" required>
+      </label>
+
+      <label>Email
+        <input type="email" name="email" placeholder="youremail@server.com" required>
+      </label>
+    </fieldset>
+
+    <!-- Address -->
+    <fieldset>
+      <legend>Address</legend>
+
+      <label>Street
+        <input type="text" name="street" placeholder="Street, number, apartm" required>
+      </label>
+
+      <label>City
+        <input type="text" name="city" placeholder="City" required>
+      </label>
+
+      <label>State/Region
+        <input type="text" name="state" placeholder="State">
+      </label>
+
+      <label>Postal code
+        <input type="text" name="postal" placeholder="Postcode" required pattern="\d{4}-\d{3}">
+      </label>
+
+      <label>Country
+        <select id="loc" name="country" required>
+          <option value="">Select Country</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <!-- Payment Details -->
+    <fieldset>
+      <legend>Payment details</legend>
+
+      <p>Credit Card</p>
+      <label><input type="radio" name="cardType" value="amex" required> American Express</label>
+      <label><input type="radio" name="cardType" value="mastercard"> Mastercard</label>
+      <label><input type="radio" name="cardType" value="visa"> Visa</label>
+      <label><input type="radio" name="cardType" value="sas"> SAS Card</label>
+
+      <br><br>
+
+      <label>Card number
+        <input type="text" name="cardNumber" placeholder="Card number" required pattern="\d{13,19}">
+      </label>
+
+      <label>Expiry date
+        <input type="month" name="expiry" required>
+      </label>
+
+      <label>CVV
+        <input type="text" name="cvv" placeholder="XXX" required pattern="\d{3}">
+      </label>
+    </fieldset>
+
+    <!-- Terms -->
+    <fieldset>
+      <legend>Terms and Conditions</legend>
+      <label>
+        <input type="checkbox" name="terms" required> I agree to the terms and conditions
+      </label>
+    </fieldset>
+
+    <br>
+    <button type="submit">Submit my details</button>
 
   </form>
 </div>
