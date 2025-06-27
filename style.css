@@ -1,90 +1,130 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Body */
 body {
-  background-color: #e6f0ff;
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: #e6f2ff;
+    padding: 20px;
 }
 
+/* Form */
 form {
-  max-width: 600px;
-  margin: 20px auto;
-  background-color: #d4e6fb;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(120,140,180,0.12);
-  border: 1px solid #a3c4e6;
+    background-color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Fieldsets */
 fieldset {
-  border: 2px solid #a3c4e6;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  padding: 16px 20px 20px 20px;
-  background: #f7fbff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f2f8ff;
 }
 
+/* Legends */
 legend {
-  font-weight: bold;
-  font-size: 1.1em;
-  background: #ff8552;
-  color: white;
-  padding: 4px 16px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-  border: 2px solid #faab7b;
-  box-shadow: 1px 1px 8px #faab7b11;
+    background-color: #ff704d;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* Labels */
 label {
-  display: block;
-  margin-top: 10px;
-  font-weight: 600;
-  margin-bottom: 2px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
+/* Inputs, selects, textareas */
 input[type="text"],
 input[type="email"],
-input[type="month"],
-select {
-  width: 100%;
-  padding: 10px;
-  border: 1.5px solid #a3c4e6;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  background: white;
-  font-size: 1em;
-  box-sizing: border-box;
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s;
 }
 
-input[type="radio"], input[type="checkbox"] {
-  margin-right: 6px;
-  margin-left: 2px;
-  accent-color: #468cff;
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #007BFF;
+    outline: none;
 }
 
+/* Radios e checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Radio group */
+.payment-group span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Agrupamento das informações do cartão */
+.card-info,
+.expiry-cvv {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.card-info label,
+.expiry-cvv label {
+    flex: 1;
+}
+
+/* Para expiry date e CVV na mesma linha */
+.expiry-cvv select,
+.expiry-cvv input {
+    width: 100%;
+}
+
+/* Submit Button */
 button[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 14px 0;
-  background-color: #268aff;
-  color: #fff;
-  font-size: 1.2em;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: background 0.2s;
-  box-shadow: 0 3px 16px rgba(80,140,200,0.13);
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
 button[type="submit"]:hover {
-  background-color: #2066cc;
+    background-color: #0056b3;
 }
 
-/* Termos e condições checkbox */
-fieldset:last-of-type label {
-  display: inline-block;
-  font-weight: bold;
-  margin-left: 6px;
-  color: #222;
+/* Responsive */
+@media (max-width: 600px) {
+    .card-info,
+    .expiry-cvv {
+        flex-direction: column;
+    }
 }
