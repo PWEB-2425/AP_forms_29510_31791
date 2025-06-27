@@ -10,7 +10,7 @@ fetch("loc.json")
     data.forEach(country => {
       const option = document.createElement("option");
       option.textContent = country.name;
-      option.value = country["alpha-2"]; // ou "country-code" se preferires
+      option.value = country["alpha-2"]; // Usa "alpha-2"
       countryList.appendChild(option);
     });
   })
