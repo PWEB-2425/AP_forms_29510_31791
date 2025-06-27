@@ -1,16 +1,17 @@
 fetch("loc.json")
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
   .then(data => {
-    let countryList = document.getElementById("loc");
-    console.log(countryList);
+    const countryList = document.getElementById("country");
     data.forEach(country => {
-      let option = document.createElement("option");
-      option.text = country.name;
-      option.value = country.iso_code;
-      countryList.add(option);
+      const option = document.createElement("option");
+      option.textContent = country.name;
+      option.value = country["alpha-2"]; // Usa "alpha-2"
+      countryList.appendChild(option);
     });
   })
-  .catch(error => console.error("Error:", error));  
-  
-
-  
+  .catch(error => console.error("Error loading countries:", error));
