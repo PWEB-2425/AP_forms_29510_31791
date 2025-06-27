@@ -3,109 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form - Part 2</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="loadloc.js" defer></script>
+    <title>Activity #3: Forms</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
-<header>Using CSS to style an HTML Form</header>
-<article>
-<div>
-  <form id="myform" action="">
-
+<form>
     <!-- Personal Information -->
     <fieldset>
-      <legend>Personal Information</legend>
-      <label>Title
-        <select name="title">
-          <option>Mr.</option>
-          <option>Mrs.</option>
-          <option>Ms.</option>
-          <option>Dr.</option>
+        <legend>Personal Information</legend>
+
+        <label for="title">Title</label>
+        <select id="title" name="title">
+            <option value="mr">Mr.</option>
+            <option value="mrs">Mrs.</option>
+            <option value="ms">Ms.</option>
+            <option value="dr">Dr.</option>
         </select>
-      </label>
 
-      <label>First name
-        <input type="text" name="firstname" placeholder="Your first name here" required>
-      </label>
+        <label for="first-name">First name</label>
+        <input type="text" id="first-name" name="first-name" required placeholder="Your first name here">
 
-      <label>Last name
-        <input type="text" name="lastname" placeholder="Your last name here" required>
-      </label>
+        <label for="last-name">Last name</label>
+        <input type="text" id="last-name" name="last-name" required placeholder="Your last name here">
 
-      <label>Email
-        <input type="email" name="email" placeholder="youremail@server.com" required>
-      </label>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="youremail@server.com">
     </fieldset>
 
     <!-- Address -->
     <fieldset>
-      <legend>Address</legend>
+        <legend>Address</legend>
 
-      <label>Street
-        <input type="text" name="street" placeholder="Street, number, apartm" required>
-      </label>
+        <label for="street">Street</label>
+        <input type="text" id="street" name="street" required placeholder="Street, number, apartment">
 
-      <label>City
-        <input type="text" name="city" placeholder="City" required>
-      </label>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required placeholder="City">
 
-      <label>State/Region
-        <input type="text" name="state" placeholder="State">
-      </label>
+        <label for="state">State/Region</label>
+        <input type="text" id="state" name="state" placeholder="State">
 
-      <label>Postal code
-        <input type="text" name="postal" placeholder="Postcode" required pattern="\d{4}-\d{3}">
-      </label>
+        <label for="postal-code">Postal code</label>
+        <input type="text" id="postal-code" name="postal-code" required placeholder="Postcode" pattern="\d{4}-\d{3}">
 
-      <label>Country
-        <select id="loc" name="country" required>
-          <option value="">Select Country</option>
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+            <option value="">Select country</option>
+            <!-- Vai ser preenchido dinamicamente pelo loadloc.js -->
         </select>
-      </label>
     </fieldset>
 
     <!-- Payment Details -->
     <fieldset>
-      <legend>Payment details</legend>
+        <legend>Payment details</legend>
 
-      <p>Credit Card</p>
-      <label><input type="radio" name="cardType" value="amex" required> American Express</label>
-      <label><input type="radio" name="cardType" value="mastercard"> Mastercard</label>
-      <label><input type="radio" name="cardType" value="visa"> Visa</label>
-      <label><input type="radio" name="cardType" value="sas"> SAS Card</label>
+        <p>Credit Card</p>
+        <label><input type="radio" name="card-type" value="amex" required> American Express</label>
+        <label><input type="radio" name="card-type" value="mastercard"> Mastercard</label>
+        <label><input type="radio" name="card-type" value="visa"> Visa</label>
+        <label><input type="radio" name="card-type" value="sas"> SAS Card</label>
 
-      <br><br>
+        <div class="card-info">
+            <label for="card-number">Card number
+                <input type="text" id="card-number" name="card-number" required placeholder="Card number" pattern="\d{13,19}">
+            </label>
 
-      <label>Card number
-        <input type="text" name="cardNumber" placeholder="Card number" required pattern="\d{13,19}">
-      </label>
-
-      <label>Expiry date
-        <input type="month" name="expiry" required>
-      </label>
-
-      <label>CVV
-        <input type="text" name="cvv" placeholder="XXX" required pattern="\d{3}">
-      </label>
-    </fieldset>
-
-    <!-- Terms -->
-    <fieldset>
-      <legend>Terms and Conditions</legend>
-      <label>
-        <input type="checkbox" name="terms" required> I agree to the terms and conditions
-      </label>
-    </fieldset>
-
-    <br>
-    <button type="submit">Submit my details</button>
-
-  </form>
-</div>
-</article>
-<footer>pedromoreira 2024</footer>
-</body>
-</html>
+            <label for="expiry">Expiry date
+                <input type="month" id="expiry" name="expiry" required>
+            </label>

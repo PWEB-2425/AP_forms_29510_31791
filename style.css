@@ -1,121 +1,90 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-/* Body */
 body {
-    background-color: #e6f2ff;
-    padding: 20px;
+  background-color: #e6f0ff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Form */
 form {
-    background-color: white;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #d4e6fb;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(120,140,180,0.12);
+  border: 1px solid #a3c4e6;
 }
 
-/* Fieldsets */
 fieldset {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    background-color: #f2f8ff;
+  border: 2px solid #a3c4e6;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  padding: 16px 20px 20px 20px;
+  background: #f7fbff;
 }
 
-/* Legends */
 legend {
-    background-color: #ff704d;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 13px;
+  font-weight: bold;
+  font-size: 1.1em;
+  background: #ff8552;
+  color: white;
+  padding: 4px 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  border: 2px solid #faab7b;
+  box-shadow: 1px 1px 8px #faab7b11;
 }
 
-/* Labels */
 label {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 4px;
-    font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  margin-bottom: 2px;
 }
 
-/* Inputs */
 input[type="text"],
 input[type="email"],
-input[type="password"],
 input[type="month"],
-select,
-textarea {
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #a3c4e6;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: white;
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
-/* Inline fields (Postal Code, State, City) */
-fieldset label.inline {
-    display: inline-block;
-    width: calc(50% - 10px);
-    margin-right: 10px;
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 6px;
+  margin-left: 2px;
+  accent-color: #468cff;
 }
 
-/* Radios e checkboxes */
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-/* Radio group inline */
-fieldset p {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-/* Card number, expiry, CVV inline */
-.card-info {
-    display: flex;
-    gap: 10px;
-}
-
-.card-info label {
-    flex: 1;
-}
-
-/* Submit button */
 button[type="submit"] {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  background-color: #268aff;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 3px 16px rgba(80,140,200,0.13);
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+  background-color: #2066cc;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .card-info {
-        flex-direction: column;
-    }
-
-    fieldset label.inline {
-        width: 100%;
-        margin-right: 0;
-    }
+/* Termos e condições checkbox */
+fieldset:last-of-type label {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 6px;
+  color: #222;
 }
