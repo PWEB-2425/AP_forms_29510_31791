@@ -1,77 +1,130 @@
-/* Basic reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    font-size: 12px;
 }
 
-/* Container styling */
+/* Body */
+body {
+    background-color: #e6f2ff;
+    padding: 20px;
+}
+
+/* Form */
 form {
+    background-color: white;
     max-width: 600px;
-    margin: 1em auto;
-    padding: 1em;
-    /* ... */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Fieldset styling */
+/* Fieldsets */
 fieldset {
-    /* ... */
     border: 1px solid #ccc;
-    position: relative;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f2f8ff;
 }
 
-/* Legend styling */
+/* Legends */
 legend {
-     /* ... */
-    border: 1px solid green;
+    background-color: #ff704d;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Label and input styling */
+/* Labels */
 label {
     display: block;
-    /* ... */
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
+/* Inputs, selects, textareas */
 input[type="text"],
 input[type="email"],
 input[type="password"],
-textarea,
-select{
-    /* ... */
+select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
     border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s;
 }
 
-/* Checkbox styling */
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Radios e checkboxes */
+input[type="radio"],
 input[type="checkbox"] {
-    margin-right: 1em;
+    margin-right: 8px;
 }
 
-/* Button styling */
-button[type="submit"],
-input[type="submit"] {
-    /* ... */
+/* Radio group */
+.payment-group span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Agrupamento das informações do cartão */
+.card-info,
+.expiry-cvv {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.card-info label,
+.expiry-cvv label {
+    flex: 1;
+}
+
+/* Para expiry date e CVV na mesma linha */
+.expiry-cvv select,
+.expiry-cvv input {
+    width: 100%;
+}
+
+/* Submit Button */
+button[type="submit"] {
     background-color: #007BFF;
-
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover,
-input[type="submit"]:hover {
+button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 600px) {
-    form {
-        padding: 1em;
-    }
-
-    button[type="submit"],
-    input[type="submit"] {
-        font-size: 1.2em;
+    .card-info,
+    .expiry-cvv {
+        flex-direction: column;
     }
 }
-
-
