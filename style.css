@@ -27,7 +27,7 @@ fieldset {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     background-color: #f2f8ff;
 }
 
@@ -35,72 +35,85 @@ fieldset {
 legend {
     background-color: #ff704d;
     color: white;
-    padding: 4px 10px;
-    border-radius: 6px;
+    padding: 4px 12px;
+    border-radius: 8px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 14px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Labels */
 label {
     display: block;
     margin-top: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
-/* Inputs */
+/* Inputs, selects, textareas */
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="month"],
 select,
 textarea {
     width: 100%;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 8px 10px;
+    border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 14px;
+    transition: border-color 0.3s;
 }
 
-/* Inline fields (Postal Code, State, City) */
-fieldset label.inline {
-    display: inline-block;
-    width: calc(50% - 10px);
-    margin-right: 10px;
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #007BFF;
+    outline: none;
 }
 
 /* Radios e checkboxes */
 input[type="radio"],
 input[type="checkbox"] {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
-/* Radio group inline */
-fieldset p {
+/* Radio group */
+.payment-group span {
+    display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-/* Card number, expiry, CVV inline */
-.card-info {
+/* Agrupamento das informações do cartão */
+.card-info,
+.expiry-cvv {
     display: flex;
     gap: 10px;
+    margin-top: 10px;
 }
 
-.card-info label {
+.card-info label,
+.expiry-cvv label {
     flex: 1;
 }
 
-/* Submit button */
+/* Para expiry date e CVV na mesma linha */
+.expiry-cvv select,
+.expiry-cvv input {
+    width: 100%;
+}
+
+/* Submit Button */
 button[type="submit"] {
     background-color: #007BFF;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     margin-top: 10px;
+    width: 100%;
     transition: background-color 0.3s;
 }
 
@@ -110,12 +123,8 @@ button[type="submit"]:hover {
 
 /* Responsive */
 @media (max-width: 600px) {
-    .card-info {
+    .card-info,
+    .expiry-cvv {
         flex-direction: column;
-    }
-
-    fieldset label.inline {
-        width: 100%;
-        margin-right: 0;
     }
 }
