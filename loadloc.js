@@ -1,7 +1,7 @@
 fetch("loc.json")
   .then(response => response.json())
   .then(data => {
-    let countryList = document.getElementById("loc");
+    let countryList = document.getElementById("country");
     console.log(countryList);
     data.forEach(country => {
       let option = document.createElement("option");
